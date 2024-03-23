@@ -40,7 +40,7 @@ const NavItems = [
 
 function NavBar() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="bg-black">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Image src={logo} alt="logo" width={100} height={100} />
