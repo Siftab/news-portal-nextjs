@@ -3,36 +3,82 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import Image from "next/image";
+import logo from "@/assests/logo.png";
+import { IconButton, Stack } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import Link from "next/link";
 
-const pages = ["Products", "Pricing", "Blog"];
+const NavItems = [
+  {
+    route: "Home",
+    pathName: "/",
+  },
+  {
+    route: "Pages",
+    pathName: "/pages",
+  },
+  {
+    route: "category",
+    pathName: "/category",
+  },
+  {
+    route: "News",
+    pathName: "/news",
+  },
+  {
+    route: "About",
+    pathName: "/about",
+  },
+  {
+    route: "Contact",
+    pathName: "/contact",
+  },
+];
 
 function NavBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+          <Image src={logo} alt="logo" width={100} height={100} />
+          <Box className="w-full text-center">
+            {NavItems.map((item) => (
+              <Link key={item} href={item.pathName}>
+                <Button sx={{ my: 2, color: "white" }}>{item.route}</Button>
+              </Link>
             ))}
+          </Box>
+          <Box>
+            <Stack
+              direction="row"
+              sx={{
+                "& svg": {
+                  color: "white",
+                },
+              }}
+            >
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon />
+              </IconButton>
+            </Stack>
           </Box>
         </Toolbar>
       </Container>
