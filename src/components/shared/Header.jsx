@@ -23,7 +23,7 @@ const Header = () => {
         >
           Journalism without Fear and Favour
         </Typography>
-        <Typography className="w-full text-center">
+        <Typography className="w-full text-center text-2xl">
           {moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}
         </Typography>
       </Container>
