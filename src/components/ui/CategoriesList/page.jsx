@@ -1,5 +1,6 @@
 import useCategoryList from "@/components/Hooks/useCategoryList";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 const CategoriesList = async () => {
@@ -13,7 +14,9 @@ const CategoriesList = async () => {
       <Stack rowGap={2}>
         {allCategoryLists.map((item) => (
           <Button variant="outlined" key={item.id}>
-            {item.title}
+            <Link href={`/categories/news?${item.title.toLowerCase()}`}>
+              {item.title}
+            </Link>
           </Button>
         ))}
       </Stack>

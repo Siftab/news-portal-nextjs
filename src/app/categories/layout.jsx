@@ -9,7 +9,7 @@ const CategoriesLayout = ({ children }) => {
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <h1>
-              <CategoriesList />{" "}
+              <CategoriesList />
             </h1>
           </Grid>
           <Grid item xs={9}>
