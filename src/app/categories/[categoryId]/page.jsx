@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const CategoryId = async ({ params, searchParams }) => {
@@ -30,35 +31,37 @@ const CategoryId = async ({ params, searchParams }) => {
               //   rowSpacing={1}
               //   columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Card className="w-full mt-8">
-                <CardActionArea>
-                  {/* <CardMedia
+              <Link href={`/${news.category.toLowerCase()}/${news._id}`}>
+                <Card className="w-full mt-8">
+                  <CardActionArea>
+                    {/* <CardMedia
             component="img"
             height="140"
             image={topNews}
             alt="green iguana" 
           />*/}
-                  <Image
-                    src={news.image_url}
-                    alt="cardImg"
-                    width={400}
-                    height={400}
-                    className="w-full h-[250px]"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {news.title.length > 25
-                        ? news.title.slice(0, 25) + "..."
-                        : news.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {news.details.length > 300
-                        ? news.details.slice(0, 300) + "..."
-                        : news.details}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+                    <Image
+                      src={news.image_url}
+                      alt="cardImg"
+                      width={400}
+                      height={400}
+                      className="w-full h-[250px]"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {news.title.length > 25
+                          ? news.title.slice(0, 25) + "..."
+                          : news.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {news.details.length > 300
+                          ? news.details.slice(0, 300) + "..."
+                          : news.details}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
             </Grid>
           ))}
         </Grid>
